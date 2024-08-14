@@ -1,5 +1,11 @@
 version: 0.2
 
+env:
+  parameter-store:
+    DOCKER_CREDS_PWD: /simple-py-app/docker-creds/pwd
+    DOCKER_CREDS_USERNAME: /simple-py-app/docker-creds/username
+
+
 phases:
   install: 
     runtime-versions:
@@ -12,8 +18,8 @@ phases:
     commands:
       - cd simple-py-app
       - echo "building docker image for app"
-      - docker build -t "<>"
-      - docker push <>
+      - docker build -t "docker.io/$DOCKER_CRED_USERNAME/simple-py-be:latest"
+      - docker push "docker.io/$DOCKER_CRED_USERNAME/simple-py-be:latest"
 
   post_build:
     commands:
