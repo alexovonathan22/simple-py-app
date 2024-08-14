@@ -14,7 +14,7 @@ phases:
     commands:
       - pwd
       - ls -al
-      - pip install -r simple-py-app/requirements.txt
+      - pip install -r requirements.txt
 
   build:
     commands:
