@@ -12,6 +12,8 @@ phases:
       python: 3.11
   pre_build:
     commands:
+      - pwd
+      - ls -al
       - pip install -r simple-py-app/requirements.txt
 
   build:
