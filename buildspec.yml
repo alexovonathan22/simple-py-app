@@ -19,8 +19,10 @@ phases:
   build:
     commands:
       - cd simple-py-app
+      - pwd
+      - ls -al
       - echo "building docker image for app"
-      - docker build -t "docker.io/$DOCKER_CRED_USERNAME/simple-py-be:latest"
+      - docker build -t "docker.io/$DOCKER_CRED_USERNAME/simple-py-be:latest" .
       - docker push "docker.io/$DOCKER_CRED_USERNAME/simple-py-be:latest"
 
   post_build:
