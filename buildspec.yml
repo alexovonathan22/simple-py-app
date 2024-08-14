@@ -19,6 +19,7 @@ phases:
       - pwd
       - ls -al
       - echo "building docker image for app"
+      - echo "$DOCKER_CREDS_PWD" | docker login -u "$DOCKER_CREDS_USERNAME" --password-stdin "docker.io"
       - docker build -t "docker.io/$DOCKER_CREDS_USERNAME/simple-py-be:latest" .
       - docker push "docker.io/$DOCKER_CREDS_USERNAME/simple-py-be:latest"
 
